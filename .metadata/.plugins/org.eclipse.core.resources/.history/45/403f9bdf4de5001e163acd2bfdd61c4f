@@ -1,0 +1,28 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the email from the form data
+    $email = $_POST["email"];
+
+    // Validate the email address
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Invalid email address.";
+        exit();
+    }
+
+    // Generate a random OTP (4 digits)
+    $otp = sprintf("%04d", rand(0, 9999));
+
+    // Email parameters
+    $to = $email;
+    $subject = "Your OTP for Password Reset";
+    $message = "Your OTP is: " . $otp;
+    $headers = "From: your_email@example.com"; // Replace with your email address
+
+    // Send the email
+    if (mail($to, $subject, $message, $headers)) {
+        echo "OTP sent to your email.";
+    } else {
+        echo "Failed to send OTP. Please try again later.";
+    }
+}
+?>

@@ -1,0 +1,29 @@
+<button type="button" onclick="sendOTP()">Send OTP</button>
+
+<script>
+    function sendOTP() {
+        var email = document.getElementById('email').value;
+        if (!email) {
+            showMessage('Please enter your email.', 'danger');
+            return;
+        }
+
+        fetch('/sendOTP', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email: email })
+        })
+        .then(response => {
+            if (response.ok) {
+                showMessage('OTP sent to your email.', 'success');
+            } else {
+                showMessage('Failed to send OTP. Please try again later.', 'danger');
+            }
+        })
+        .catch(error => {
+            showMessage('Failed to send OTP. Please try again later.', 'danger');
+        });
+    }
+</script>

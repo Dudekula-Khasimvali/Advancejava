@@ -1,0 +1,38 @@
+<!--<html>
+<head>
+<title>JavaScript</title>  
+<script type="text/javascript" src="First.js"></script>
+</head>
+<body>
+<form >
+<label>Enter Fahrenheit:</label>
+<input type="text" id="fahrenheitInput" onInput="convertToFahrenheit()" required>
+<br><br>
+
+<label> Celsius :</label>
+<input type="text" id="celsiusOutput" readonly>
+<br><br>
+</form>
+</body>
+</html>-->
+
+ 
+<html>
+<head>
+<title>Farenhit to celcius Convert</title>
+<script type="text/javascript" src="First.js"></script>
+</head>
+<body style="background-color: gray;  text-align: center;">
+<form >
+<label>Enter the Dollar:</label>
+<input type="text" id="dollarInput" placeholder="Enter the Dollar"   oninput="convertToINR"   required>
+<br><br>
+<label> Indian Rupees:</label>
+<input type="text" id="INRoutput"   readonly>
+<br><br>
+</form>
+</body>
+</html>
+
+
+

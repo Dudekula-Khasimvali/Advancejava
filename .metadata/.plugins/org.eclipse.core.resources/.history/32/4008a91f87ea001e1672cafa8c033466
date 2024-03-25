@@ -1,0 +1,38 @@
+package com.mysql.command;
+import java.sql.*;
+public class MysqlEx1 {
+
+	public static void main(String[] args) throws ClassNotFoundException,SQLException {
+		//Loading Driver(Diver loading is optional in Mysql)
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		//Connection creation
+		Connection connection=DriverManager.getConnection("jdbc:mysql://localhost/khasim","root","root");
+		System.out.println("Conection Created Successfuly");
+		
+		//Creating PreparedStatement Object
+		PreparedStatement ps=connection.prepareStatement("insert into emp values(?,?,?)");
+		//set data to Question Marks
+		ps.setInt(1, 1);
+		ps.setString(2, "pavan");
+		ps.setFloat(3, 1500.01f);
+		ps.addBatch();
+		
+		ps.setInt(1, 2);
+		ps.setString(2, "kalyan");
+		ps.setFloat(3, 25000.1f);
+		ps.addBatch();
+		
+		ps.setInt(1, 3);
+		ps.setString(2, "ram");
+		ps.setFloat(3, 35000.2f);
+		ps.addBatch();
+		
+		//execute the Querry
+		ps.executeBatch();
+		
+		//Connection Closing
+		connection.close();
+		System.out.println("Connection Closed Succesfully");
+	}
+
+}

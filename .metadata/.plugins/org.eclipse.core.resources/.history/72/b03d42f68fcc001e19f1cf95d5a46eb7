@@ -1,0 +1,26 @@
+package com.khasim.jdbc;
+import java.sql.*;
+public class DBclient {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		EmployeeDao ed=new EmployeeDao();
+		int res1=ed.save(new Employee(101,"khasim",116.00));
+		System.out.println("Data inseted Successfully"+res1);
+		
+		int res2=ed.save(new Employee(102,"vali",108.0));
+		System.out.println("Data inserted Successfully"+res2);
+		
+		Employee emp=EmployeeDao.findById(101);
+		System.out.println(emp);
+		Employee emp1=EmployeeDao.findById(102);
+		System.out.println(emp);
+	
+		int dcount = EmployeeDao.deleteById(101);
+		if(dcount == 1) {
+		    System.out.println("Deleted successfully");
+		} else {
+		    System.out.println("No such record found or deletion failed");
+		}
+	}	
+	}

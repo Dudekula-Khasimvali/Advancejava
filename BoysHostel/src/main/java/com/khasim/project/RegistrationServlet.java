@@ -1,0 +1,80 @@
+package com.khasim.project;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/RegistrationServlet")
+public class RegistrationServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+    private HostelDao hostelDao; // Instantiate DAO
+
+    @Override
+    public void init() throws ServletException {
+        super.init();
+        hostelDao = new HostelDao(); // Initialize DAO in init() method
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+
+        String email = request.getParameter("email");
+        String phone = request.getParameter("phone");
+        String aadhar = request.getParameter("aadhar");
+
+        String selectedHostel = request.getParameter("selectedHostel");
+        String hostelField = "";
+
+        switch (selectedHostel) {
+            case "Hostel 1":
+                hostelField = request.getParameter("hostel1Field");
+                break;
+            case "Hostel 2":
+                hostelField = request.getParameter("hostel2Field");
+                break;
+            case "Hostel 3":
+                hostelField = request.getParameter("hostel3Field");
+                break;
+            default:
+                break;
+        }
+
+        // Call DAO methods to insert data into the database
+        boolean userInserted = hostelDao.insertUserRegistration(email, phone, aadhar);
+        boolean hostelInserted = hostelDao.insertHostelRegistration(selectedHostel, hostelField);
+
+        if (userInserted && hostelInserted) {
+            // Registration successful
+            out.println("<h1>Registration Successful</h1>");
+            out.println("<p>Email: " + email + "</p>");
+            out.println("<p>Phone Number: " + phone + "</p>");
+            out.println("<p>Aadhar Number: " + aadhar + "</p>");
+            out.println("<p>Selected Hostel: " + selectedHostel + "</p>");
+            out.println("<p>Hostel Specific Field: " + hostelField + "</p>");
+            out.println("<img src='" + getHostelImage(selectedHostel) + "' alt='Hostel Image'>");
+        } else {
+            // Registration failed
+            out.println("<h1>Registration Failed</h1>");
+        }
+    }
+
+    private String getHostelImage(String hostelName) {
+        switch (hostelName) {
+            case "Hostel 1":
+                return "Hostel.jpg"; // Path to Hostel 1 image
+            case "Hostel 2":
+                return "Hostel2.jpg"; // Path to Hostel 2 image
+            case "Hostel 3":
+                return "Hostel3.jpg"; // Path to Hostel 3 image
+            default:
+                return ""; // Default empty path
+        }
+    }
+
+    }

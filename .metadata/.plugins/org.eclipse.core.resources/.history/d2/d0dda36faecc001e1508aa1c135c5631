@@ -1,0 +1,29 @@
+package java8Features;
+import java.util.*;
+@FunctionalInterface
+interface First {
+	void m1();
+	static void m2() {
+		System.out.println("static method of FunctionalInterface");
+	}
+	default void m3() {
+		System.out.println("defaut method of FunctionalInterface");
+	}
+	class Secound implements First{
+		public void m1() {
+			System.out.println("adstract method of FunctionalInterface");
+		}
+	}
+}
+public class FunctionalInterfaceDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			First f=new Second();
+			
+			f.m1();
+			f.m3();
+			First.m2();
+	}
+
+}

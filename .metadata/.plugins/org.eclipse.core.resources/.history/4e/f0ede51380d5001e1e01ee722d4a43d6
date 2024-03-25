@@ -1,0 +1,46 @@
+/*var massRatan=parseInt(prompt("Enter the Ratanmass"));
+var heightRatan=parseInt(prompt("Enter the RatanHeight"));
+var massAnu=parseInt(prompt("Enter the Anumass"));
+var heightAnu=parseInt(prompt("Enter the AnuHeight"));
+var BMIratan;
+var BMIAnu;
+ BMIratan= massRatan/(heightRatan * heightRatan);
+ BMIAnu = massAnu/ (heightAnu * heightAnu);
+ console.log(BMIratan);
+ console.log(BMIAnu);
+ document.write("value of BMIRatan="+BMIratan);
+ document.write("value of BMIAnu="+BMIAnu);
+ //creating a boolean value to check BMIratan higher than BMIAnu
+ const RatanHigherBMI=BMIratan >BMIAnu;
+ //log it to the console log()
+ console.log("BMIratan is higher than BMIAnu="+RatanHigherBMI);*/
+ 
+
+ /*for ( let num = 1; num <= 100; num++) {
+    if (num % 15 === 0) {
+        document.write("FizzBuzz JavaScript="+num);
+    } else if (num % 3 === 0) {
+        console.log("Fizz="+num);
+    } else if (num % 5 === 0) {
+        console.log("Buzz="+num);
+    }
+    else {
+        console.log(num);
+    }
+}*/
+
+
+function convertToFahrenheit()
+{
+	const farenhit=parseFloat(document.getElementById("fahrenheitInput").value);
+	const Celcius= farenhit -32 *5/9;
+	document.getElementById('celsiusOutput').value=Celcius.getoFixed(2);
+}
+
+
+function convertToINR() {
+	let rate=82.89;
+    const dollar = parseFloat(document.getElementById('dollarInput').value);
+    const inr = ( dollar) * rate;
+    document.getElementById('INRoutput').value = inr.toFixed(2);
+}

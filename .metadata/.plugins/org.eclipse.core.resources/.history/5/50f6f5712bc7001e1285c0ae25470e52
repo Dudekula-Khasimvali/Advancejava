@@ -1,0 +1,59 @@
+package Collections;
+import java.util.*;
+public class MainofPOJO {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		ArrayList<EmployeePOJO> al = new ArrayList<EmployeePOJO>();
+				
+		for(int i=0;i<3;i++) {
+			System.out.println("Enter the Employee details");
+			int id=sc.nextInt();
+			String name=sc.next();
+			float salary = sc.nextFloat();
+			int dept=sc.nextInt();
+			String location=sc.next();
+			
+			EmployeePOJO e=new EmployeePOJO();
+			     e.setId(id);
+			     e.setName(name);
+			     e.setDept(dept);
+			     e.setSalary(salary);
+			     e.setLocation(location);
+			     
+			     al.add(e);
+		}
+		for(int i=0;i<al.size();i++) {
+			EmployeePOJO e=al.get(i);
+			System.out.println(e.getId()+" "+e.getName()+" "+e.getDept()+" "+e.getSalary()+" "+e.getLocation());
+		}
+		
+		// emp cetails with 103
+		
+		/*for(EmployeePOJO x:al) {
+			if(x.getId()==103) {
+				System.out.println(x.getId()+" "+x.getName()+" "+x.getDept()+" "+x.getSalary()+" "+x.getLocation());
+			}
+		}*/
+		
+		// emp  belongs to hyderabad
+		for(EmployeePOJO x:al) {
+			if(x.getLocation().equals("hyderabad"))
+				System.out.println(x.getId()+" "+x.getName()+" "+x.getDept()+" "+x.getSalary()+" "+x.getLocation());
+		}
+		
+		// emp belongs to dept 20-30
+		for(EmployeePOJO x:al) {
+			if(x.getDept()==20 ||x.getDept()==30 ) {
+				System.out.println(x.getId()+" "+x.getName()+" "+x.getDept()+" "+x.getSalary()+" "+x.getLocation());
+			}
+
+		}
+		
+		// who does't belongs to Hyderabad
+		for(EmployeePOJO x:al) {
+			if(!(x.getLocation().equals("hyderabad")))
+				System.out.println(x.getId()+" "+x.getName()+" "+x.getDept()+" "+x.getSalary()+" "+x.getLocation());
+		}
+}
+}

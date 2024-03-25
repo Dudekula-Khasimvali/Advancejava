@@ -1,0 +1,71 @@
+package MultiThreading;
+import java.lang.*;
+
+/*class Demo implements Runnable
+{
+	public void run()
+	{
+		for(int i=0;i<=5;i++) {
+			System.out.println("GoodMorning");
+			try {
+				Thread.sleep(1000);
+			}catch(Exception e) {
+				
+			}
+		}
+	}
+}
+class Demo1 implements Runnable
+{
+	public void run()
+	{
+		for(int i=0;i<=5;i++) {
+			System.out.println("Good Night");
+			try {
+				Thread.sleep(1000);
+			}catch(Exception e) {
+				
+			}
+		}
+	}
+}*/
+public class MultiThreadExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//Demo d=new Demo();
+		// d1=new Demo1();
+		
+	/*	Runnable d1=new Demo1();
+		Runnable d=new Demo();
+		
+		Thread t1=new Thread(d);
+		Thread t=new Thread(d1);
+		
+		t1.start();
+		try {
+			Thread.sleep(10);
+		}catch(Exception e) {
+			
+		}
+		t.start();
+		try {
+			Thread.sleep(10);
+		}catch(Exception e) {
+			
+		}*/
+		
+		Runnable d1=()->{
+			
+			for(int i=0;i<=5;i++) {
+				System.out.println("Jaii Balayya");
+				try {
+					Thread.sleep(1000);
+				}catch(Exception e) {
+					
+				}
+			}
+		};			
+	}
+}

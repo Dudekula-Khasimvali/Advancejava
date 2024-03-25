@@ -1,0 +1,15 @@
+package LinkedList;
+import java.util.*;
+public class Assaignment {
+
+	int roll;
+	String name;
+	String subject;
+	public Assaignment(int roll, String name, String subject) {
+		super();
+		this.roll = roll;
+		this.name = name;
+		this.subject = subject;
+	}
+
+}

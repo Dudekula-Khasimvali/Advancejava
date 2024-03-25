@@ -1,0 +1,31 @@
+package methodReferences;
+import java.util.*;
+public class MainStudent {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<Student> as=new ArrayList<Student>();
+		Student s=new Student();
+		int rollno[]= {1,3,4,5,2};
+		String names[]= {"khasim","vali","vikas","vinod","viswa"};
+		int age[]= {20,19,18,17,21};
+		
+		for(int i=0;i<names.length;i++) {
+			s.setRollno(rollno[i]);
+			s.setName(names[i]);
+			s.setAge(age[i]);
+			
+			as.add(s);
+		}
+		Comparator<Student> com=Comparator.comparing(Student::getName);
+		Collections.sort(as,com);
+		for(Student x:as)
+			System.out.println(x.getRollno()+" "+x.getName()+" "+x.getAge());
+	
+		Comparator<Student> com1=Comparator.comparing(Student::getAge);
+		Collections.sort(as,com1);
+		for(Student x:as)
+			System.out.println(x);
+	}
+
+}

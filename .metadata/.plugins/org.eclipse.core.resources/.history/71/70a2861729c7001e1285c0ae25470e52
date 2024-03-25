@@ -1,0 +1,31 @@
+package Collections;
+import java.util.*;
+public class MainofPOJO {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		ArrayList<EmployeePOJO> al = new ArrayList<EmployeePOJO>();
+				
+		for(int i=0;i<6;i++) {
+			System.out.println("Enter the Employee details");
+			int id=sc.nextInt();
+			String name=sc.next();
+			float salary = sc.nextFloat();
+			int dept=sc.nextInt();
+			String location=sc.next();
+			
+			EmployeePOJO e=new EmployeePOJO();
+			     e.setId(id);
+			     e.setName(name);
+			     e.setDept(dept);
+			     e.setSalary(salary);
+			     e.setLocation(location);
+			     
+			     al.add(e);
+		}
+		for(int i=0;i<al.size();i++) {
+			EmployeePOJO e=al.get(i);
+			System.out.println(e.getId()+" "+e.getName()+" "+e.getDept()+" "+e.getSalary()+" "+e.getLocation());
+		}
+}
+}

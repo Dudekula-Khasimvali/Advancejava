@@ -1,0 +1,28 @@
+package LinkedList;
+import java.util.*;
+public class Assaignment2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LinkedList<Assaignment> la=new LinkedList<Assaignment>();
+		Assaignment a=new Assaignment(101,"khasim","java");
+		Assaignment a1=new Assaignment(102,"vali","oops");
+		Assaignment a2=new Assaignment(103,"siva","html");
+					la.add(a);
+					la.add(a1);
+					la.add(a2);
+					/*for(Assaignment x:la)
+						System.out.println(x.roll+" "+x.name+" "+x.subject);*/	 
+					//removing 
+					/*la.remove(2);
+					for(Assaignment y:la)
+						System.out.println(y.roll+" "+y.name+" "+y.subject);*/	
+					
+					for(int i=0;i<la.size();i++) {
+						Assaignment a3=la.get(i);
+						if(la.name=="vinod") {
+							
+						}
+					}
+	}
+}

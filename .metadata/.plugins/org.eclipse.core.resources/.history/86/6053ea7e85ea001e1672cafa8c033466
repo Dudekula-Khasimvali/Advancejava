@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title> LOGIN FORM </title>
+   </head>
+  <body bgcolor="yellow">
+  <div style="text-align: center;">
+  <h1> LOGIN FORM </h1>
+  <form method = "get" action = "LoginFormServlet">
+  <label > username : </label>
+  <input type = "text" name = "username" placeholder = "ENTRE USER NAME" required/>
+  <br><br>
+  <label> password : </label>
+  <input type = "password" name = "password" placeholder = "ENTRE PASSWORD" required/>
+  <br><br>
+  <input type = "submit" value = "login"/>
+  </form>
+  </div>
+  </body>
+</html>

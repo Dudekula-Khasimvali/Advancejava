@@ -1,0 +1,98 @@
+package com.khasim.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/NumberlistServlet")
+public class NumberlistServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    public NumberlistServlet() {
+        super();
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+            String snum1Str = request.getParameter("snum1");
+            String enum2Str = request.getParameter("enum2");
+            String operation = request.getParameter("operation");
+
+            // Check for null inputs
+            if (snum1Str == null || enum2Str == null || operation == null) {
+                throw new IllegalArgumentException("Parameters cannot be null.");
+            }
+
+            int snum1 = Integer.parseInt(snum1Str);
+            int enum2 = Integer.parseInt(enum2Str);
+
+            if (snum1 >= enum2) {
+                throw new IllegalArgumentException("Starting number should be less than ending number.");
+            }
+
+            ArrayList<Integer> result = new ArrayList<>();
+
+            switch (operation) {
+                case "even":
+                    for (int i = snum1; i <= enum2; i++) {
+                        if (i % 2 == 0) {
+                            result.add(i);
+                        }
+                    }
+                    break;
+                case "odd":
+                    for (int i = snum1; i <= enum2; i++) {
+                        if (i % 2 != 0) {
+                            result.add(i);
+                        }
+                    }
+                    break;
+                case "prime":
+                    for (int i = snum1; i <= enum2; i++) {
+                        if (isPrime(i)) {
+                            result.add(i);
+                        }
+                    }
+                    break;
+                case "perfect":
+                    for (int i = snum1; i <= enum2; i++) {
+                        if (isPerfect(i)) {
+                            result.add(i);
+                        }
+                    }
+                    break;
+                case "strong":
+                    for (int i = snum1; i <= enum2; i++) {
+                        if (isStrong(i)) {
+                            result.add(i);
+                        }
+                    }
+                    break;
+                default:
+                    throw new IllegalArgumentException("Invalid operation.");
+            }
+
+            response.setContentType("text/html");
+            PrintWriter writer = response.getWriter();
+            writer.println("<html>");
+            writer.println("<body bgcolor=pink>");
+            writer.println("<h2>Generated Numbers Result</h2>");
+            writer.println("Operation: " + operation + "<br><br>");
+            writer.println("Starting Number: " + snum1 + "<br><br>");
+            writer.println("Ending Number: " + enum2 + "<br><br>");
+            writer.println("Result Numbers: " + result.toString() + "<br><br>");
+
+            writer.println("</body>");
+            writer.println("</html>");
+        } catch (NumberFormatException ex) {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid input format. Please enter valid numbers.");
+        }
+    }
+}

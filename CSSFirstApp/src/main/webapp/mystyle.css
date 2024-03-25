@@ -1,0 +1,23 @@
+h1{
+	color: maroon;
+	text-align: center;
+	text-decoration: underline;
+	font-size: 50px;
+	font-family: fantasy;
+	font-style: italic;
+}
+.mycreation{
+	color: navy;
+	text-align: right;
+	text-decoration: underline;
+	font-size: 70px;
+	font-family: monospace;
+	font-style: italic;
+}
+#mydesign{
+	color: red;
+	text-decoration: underline;
+	font-size: 70px;
+	font-family: sans-serif;
+	font-style: italic;
+}

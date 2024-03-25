@@ -1,0 +1,14 @@
+package Collections;
+import java.util.*;
+public class Student {
+// w.a.jp to perform ArrayList Operations such as append insert update remove reverse and disply  of a given class called Student?
+	int rollno;
+    String name;
+    float marks;
+	public Student(int rollno, String name, float marks) {
+		super();
+		this.rollno = rollno;
+		this.name = name;
+		this.marks = marks;
+	}		
+}

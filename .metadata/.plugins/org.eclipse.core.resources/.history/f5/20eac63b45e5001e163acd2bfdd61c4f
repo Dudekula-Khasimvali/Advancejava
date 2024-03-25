@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <style>
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 30px;
+            border: 2px solid #007bff; /* Blue border */
+            border-radius: 10px;
+            background-color: #f8f9fa; /* Light gray background */
+            margin-top: 50px;
+        }
+
+        .form-group label {
+            color: #007bff; /* Blue text color */
+            display: block;
+            text-align: center; /* Center-align the labels */
+            margin-bottom: 10px; /* Add some spacing below the labels */
+        }
+
+        .form-control {
+            border-color: #007bff; /* Blue border for input fields */
+        }
+
+        .btn-primary {
+            background-color: #007bff; /* Blue button background */
+            border-color: #007bff; /* Blue button border */
+            display: block;
+            margin: 0 auto; /* Center-align the button */
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center mb-4">Forgot Password</h2>
+        <form id="forgot-password-form" onsubmit="return sendOTP()">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send OTP</button>
+        </form>
+    </div>
+
+    <script>
+        function sendOTP() {
+            var email = document.getElementById('email').value;
+            var OTP = generateOTP();
+            // Simulate sending OTP via email (replace this with actual email sending logic)
+            alert("An OTP has been sent to " + email + ". Please check your email."); // Alert message
+            // Redirect to OTP verification page or display OTP input field
+            return false; // Prevent form submission
+        }
+
+        function generateOTP() {
+            var numbers = '0123456789';
+            var OTP = '';
+            for (var i = 0; i < 6; i++) {
+                OTP += numbers[Math.floor(Math.random() * 10)];
+            }
+            return OTP;
+        }
+    </script>
+</body>
+</html>

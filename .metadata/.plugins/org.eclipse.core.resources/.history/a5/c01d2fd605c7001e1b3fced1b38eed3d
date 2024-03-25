@@ -1,0 +1,99 @@
+package Collections;
+import java.io.*;
+import java.util.*;
+/*public class Employee3 {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		ArrayList<EmployeeCollections> a1=new ArrayList<EmployeeCollections>();
+		System.out.println("Enter the employee details");
+		for(int i=0;i<3;i++) {
+			System.out.println("Enter the emp id");
+			int id=sc.nextInt();
+			System.out.println("Enter the emp Name");
+			String name=sc.next();
+			System.out.println("Enter the emp designation");
+			String desg=sc.next();
+			System.out.println("Enter the emp salary");
+			float salary=sc.nextFloat();
+			EmployeeCollections e=new EmployeeCollections(id,name,desg,salary);
+			a1.add(e);
+
+		}
+		for(EmployeeCollections x:a1)
+		System.out.println(x.id+" "+x.name+" "+x.desg+" "+x.salary);
+	}
+
+}*/
+
+////////////////////////////////////////////////////////
+
+/*public class Employee3 {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		ArrayList<EmployeeCollections> a1=new ArrayList<EmployeeCollections>();
+		while(true) {
+		System.out.println("Enter the emp id");
+			int id=sc.nextInt();
+			System.out.println("Enter the emp Name");
+			String name=sc.next();
+			System.out.println("Enter the emp designation");
+			String desg=sc.next();
+			System.out.println("Enter the emp salary");
+			float salary=sc.nextFloat();
+			EmployeeCollections e=new EmployeeCollections(id,name,desg,salary);
+			a1.add(e);
+			
+			System.out.println("do you want to continue");
+			String choice=sc.next();
+			if(choice.equals("no"))
+				break;
+		}
+		for(EmployeeCollections x:a1)
+		System.out.println(x.id+" "+x.name+" "+x.desg+" "+x.salary);
+	}
+
+}*/
+
+///////////////////////////////////////////////////////
+
+// Using Buffered Reader to read details of Employee
+
+public class Employee3 {
+
+	public static void main(String[] args) throws IOException{
+	
+		BufferedReader br=null;
+		ArrayList<EmployeeCollections> a1=new ArrayList<EmployeeCollections>();
+			try {
+				while(true) {
+			System.out.println("Enter the emp id");
+			int id=Integer.parseInt(br.readLine());
+			
+			System.out.println("Enter the emp Name");
+			String name=br.readLine();
+			System.out.println("Enter the emp designation");
+			String desg=br.readLine();
+			System.out.println("Enter the emp salary");
+			float salary=Float.parseFloat(br.readLine());
+			EmployeeCollections e=new EmployeeCollections(id,name,desg,salary);
+			a1.add(e);
+			
+			System.out.println("do you want to Continue");
+			char ch=(char)br.read();
+			if(ch=='n')
+				break;
+			}
+				for(EmployeeCollections x:a1)
+					System.out.println(x.id+" "+x.name+" "+x.desg+" "+x.salary);	
+		}
+		finally {
+			if(br!=null) {
+				br.close();
+			}
+		}
+		
+	}
+
+}

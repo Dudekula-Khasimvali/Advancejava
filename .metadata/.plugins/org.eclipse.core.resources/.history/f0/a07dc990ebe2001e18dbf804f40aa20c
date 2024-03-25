@@ -1,0 +1,134 @@
+package com.khasim.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/NumberlistServlet")
+public class NumberlistServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    public NumberlistServlet() {
+        super();
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+            int snum1 = Integer.parseInt(request.getParameter("snum1"));
+            int enum2 = Integer.parseInt(request.getParameter("enum2"));
+            String operation = request.getParameter("operation");
+
+            if (snum1 >= enum2) {
+                throw new IllegalArgumentException("Starting number should be less than ending number.");
+            }
+
+            ArrayList<Integer> result = new ArrayList<>();
+
+            switch (operation) {
+                case "even":
+                    for (int i = snum1; i <= enum2; i++) {
+                        if (i % 2 == 0) {
+                            result.add(i);
+                        }
+                    }
+                    break;
+                case "odd":
+                    for (int i = snum1; i <= enum2; i++) {
+                        if (i % 2 != 0) {
+                            result.add(i);
+                        }
+                    }
+                    break;
+                case "prime":
+                    for (int i = snum1; i <= enum2; i++) {
+                        if (isPrime(i)) {
+                            result.add(i);
+                        }
+                    }
+                    break;
+                case "perfect":
+                    for (int i = snum1; i <= enum2; i++) {
+                        if (isPerfect(i)) {
+                            result.add(i);
+                        }
+                    }
+                    break;
+                case "strong":
+                    for (int i = snum1; i <= enum2; i++) {
+                        if (isStrong(i)) {
+                            result.add(i);
+                        }
+                    }
+                    break;
+                default:
+                    throw new IllegalArgumentException("Invalid operation.");
+            }
+
+            response.setContentType("text/html");
+            PrintWriter writer = response.getWriter();
+            writer.println("<html>");
+            writer.println("<body bgcolor=pink>");
+            writer.println("<h2>Generated Numbers Result</h2>");
+            writer.println("Operation: " + operation + "<br><br>");
+            writer.println("Starting Number: " + snum1 + "<br><br>");
+            writer.println("Ending Number: " + enum2 + "<br><br>");
+            writer.println("Result Numbers: " + result.toString() + "<br><br>");
+
+            writer.println("</body>");
+            writer.println("</html>");
+        } catch (NumberFormatException | IllegalArgumentException ex) {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, ex.getMessage());
+        }
+    }
+
+    private boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean isPerfect(int num) {
+        int sum = 1;
+        for (int i = 2; i * i <= num; i++) {
+            if (num % i == 0) {
+                sum += i;
+                if (i * i != num) {
+                    sum += num / i;
+                }
+            }
+        }
+        return sum == num;
+    }
+
+    private boolean isStrong(int num) {
+        int temp = num;
+        int sum = 0;
+        while (temp != 0) {
+            int digit = temp % 10;
+            sum += factorial(digit);
+            temp /= 10;
+        }
+        return sum == num;
+    }
+
+    private int factorial(int num) {
+        int fact = 1;
+        for (int i = 1; i <= num; i++) {
+            fact *= i;
+        }
+        return fact;
+    }
+}

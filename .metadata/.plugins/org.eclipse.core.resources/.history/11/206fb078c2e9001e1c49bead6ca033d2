@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden; /* Added to prevent horizontal scrollbar */
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            animation: animateBackground linear infinite;
+        }
+
+        @keyframes animateBackground {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Added transparency for better visibility */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .form-group input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="background" style="background-image: url('hostel1.jpg');"></div> <!-- Background Div -->
+<div class="container">
+    <h2>User Registration Form</h2>
+    <form action="./RegistrationServlet" method="post">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" class="form-control" required>
+            <small class="form-text text-muted">Format: 10 digits (e.g., 1234567890)</small>
+        </div>
+        <div class="form-group">
+            <label for="aadhar">Aadhar Number:</label>
+            <input type="number" id="aadhar" name="aadhar" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#hostelModal">
+                Select Hostel
+            </button>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Register" class="btn btn-primary">
+        </div>
+    </form>
+</div>
+
+<!-- Hostel Selection Modal -->
+<div class="modal fade" id="hostelModal" tabindex="-1" role="dialog" aria-labelledby="hostelModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="hostelModalLabel">Select Hostel</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Hostel selection buttons -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registerModal1">
+                    Hostel 1
+                </button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registerModal2">
+                    Hostel 2
+                </button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registerModal3">
+                    Hostel 3
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hostel 1 Registration Modal -->
+<div class="modal fade" id="registerModal1" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel1" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel1">Hostel 1 Registration</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Hostel 1 registration form content -->
+                <form action="./RegistrationServlet" method="post">
+                    <input type="hidden" name="selectedHostel" value="Hostel 1">
+                    <div class="form-group">
+                        <label for="hostel1Field">Hostel 1 Specific Field:</label>
+                        <input type="text" id="hostel1Field" name="hostel1Field" class="form-control" required>
+                    </div>
+                    <input type="submit" value="Register" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hostel 2 Registration Modal -->
+<div class="modal fade" id="registerModal2" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel2" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel2">Hostel 2 Registration</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Hostel 2 registration form content -->
+                <form action="./RegistrationServlet"

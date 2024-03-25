@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Forgot Password</h2>
+        <form id="forgot-password-form">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <button type="button" onclick="sendOTP()">Send OTP</button>
+            </div>
+            <div class="form-group">
+                <label for="otp">Enter OTP:</label>
+                <input type="text" id="otp" required>
+                <button type="button" onclick="verifyOTP()">Verify OTP</button>
+            </div>
+            <div class="form-group">
+                <label for="new-password">New Password:</label>
+                <input type="password" id="new-password" required>
+                <button type="button" onclick="updatePassword()">Update Password</button>
+            </div>
+        </form>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        function sendOTP() {
+            var email = document.getElementById('email').value;
+            if (!email) {
+                showMessage('Please enter your email.', 'danger');
+                return;
+            }
+
+            // Send a POST request to the server to send OTP
+            fetch('/sendOTP', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email: email })
+            })
+            .then(response => {
+                if (response.ok) {
+                    showMessage('OTP sent to your email.', 'success');
+                } else {
+                    showMessage('Failed to send OTP. Please try again later.', 'danger');
+                }
+            })
+            .catch(error => {
+                showMessage('Failed to send OTP. Please try again later.', 'danger');
+            });
+        }
+
+        function verifyOTP() {
+            var otp = document.getElementById('otp').value;
+            if (!otp) {
+                showMessage('Please enter the OTP.', 'danger');
+                return;
+            }
+            // Implement logic to verify the entered OTP
+            showMessage('OTP verified successfully.', 'success');
+        }
+
+        function updatePassword() {
+            var newPassword = document.getElementById('new-password').value;
+            if (!newPassword) {
+                showMessage('Please enter your new password.', 'danger');
+                return;
+            }
+            // Implement logic to update the user's password
+            showMessage('Password updated successfully.', 'success');
+        }
+
+        function showMessage(message, type) {
+            var messageElement = document.getElementById('message');
+            messageElement.innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+        }
+    </script>
+</body>
+</html>

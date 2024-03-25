@@ -1,0 +1,25 @@
+package Collections;
+import java.util.*;
+public class Employee3 {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		ArrayList<EmployeeCollections> a1=new ArrayList<EmployeeCollections>();
+		System.out.println("Enter the employee details");
+		for(int i=0;i<3;i++) {
+			System.out.println("Enter the emp id");
+			int id=sc.nextInt();
+			System.out.println("Enter the emp Name");
+			String name=sc.next();
+			System.out.println("Enter the emp designation");
+			String desg=sc.next();
+			System.out.println("Enter the emp salary");
+			float salary=sc.nextFloat();
+			EmployeeCollections e=new EmployeeCollections(id,name,desg,salary);
+			a1.add(e);
+
+		}
+		System.out.println(a1);
+	}
+
+}

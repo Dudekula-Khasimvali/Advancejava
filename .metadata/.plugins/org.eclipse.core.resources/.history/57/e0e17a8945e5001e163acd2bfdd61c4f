@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ced4da;
+        }
+        .btn-primary {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Forgot Password</h2>
+        <form id="forgot-password-form">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="sendOTP()">Send OTP</button>
+        </form>
+    </div>
+
+    <script>
+        function sendOTP() {
+            var email = document.getElementById('email').value;
+            // Simulate sending OTP via email
+            var otp = generateOTP();
+            alert("An OTP has been sent to " + email + ". Please check your email.");
+            console.log("OTP for " + email + ": " + otp);
+        }
+
+        function generateOTP() {
+            var otp = Math.floor(100000 + Math.random() * 900000); // Generate 6-digit OTP
+            return otp;
+        }
+    </script>
+</body>
+</html>

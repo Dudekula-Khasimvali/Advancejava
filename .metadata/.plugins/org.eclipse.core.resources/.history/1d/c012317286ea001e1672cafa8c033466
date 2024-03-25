@@ -1,0 +1,33 @@
+package com.mysql.command;
+import java.sql.*;
+
+import javax.sql.rowset.CachedRowSet;
+import javax.sql.rowset.RowSetProvider;
+
+public class Resultset_vs_Rowset {
+
+    public static void main(String[] args) {
+        String jdbcURL = "jdbc:mysql://localhost:3306/khasim";
+        String username = "root";
+        String password = "root";
+
+        try (Connection connection = DriverManager.getConnection(jdbcURL, username, password)) {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM emp");
+
+            CachedRowSet cachedRowSet = RowSetProvider.newFactory().createCachedRowSet();
+            cachedRowSet.populate(resultSet);
+
+            // Move to the last row and iterate backward
+            cachedRowSet.afterLast();
+            while (cachedRowSet.previous()) {
+                int id = cachedRowSet.getInt(1);
+                String name = cachedRowSet.getString(2);
+                float salary = cachedRowSet.getFloat(3);
+                System.out.println(id + " " + name + " " + salary);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}

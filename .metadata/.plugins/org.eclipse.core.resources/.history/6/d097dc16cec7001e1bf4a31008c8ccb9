@@ -1,0 +1,47 @@
+package LinkedList;
+import java.util.*;
+public class Demo1 {
+
+	public static void main(String[] args) {
+		LinkedList<Integer> ll=new LinkedList<Integer>();
+		//addding
+		ll.add(10);
+		ll.add(20);
+		ll.add(30);
+		System.out.println(ll);
+		
+		//adding element to perticular Index
+		ll.add(1,15);
+		System.out.println(ll);
+		
+		//adding First 
+		ll.addFirst(5);
+		System.out.println(ll);
+		
+		//Adding Last
+		ll.addLast(40);
+		System.out.println(ll);
+		
+		//Removing all
+		/*ll.clear();
+		System.out.println(ll);*/
+		
+		// Element is Available or not
+		
+		if(ll.contains(15))
+			System.out.println("element is available"+ll);
+		else
+			System.out.println("Does not exist");
+		
+		//Checking elements in index
+		System.out.println(ll.get(3));
+		System.out.println(ll.getFirst());
+		System.out.println(ll.getLast());
+		
+		//Iterator
+		Iterator<Integer> itr=ll.descendingIterator();
+		while(itr.hasNext() ) {
+			System.out.println(itr.hasNext());
+		}
+	}
+}

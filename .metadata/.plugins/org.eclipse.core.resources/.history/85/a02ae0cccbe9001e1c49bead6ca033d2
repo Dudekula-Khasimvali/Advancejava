@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden; /* Added to prevent horizontal scrollbar */
+        }
+
+        .hostel-container {
+            position: relative;
+            margin-bottom: 50px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hostel-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            border-radius: 5px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .form-group input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="hostel-container">
+                <div class="hostel-background" style="background-image: url('Hostel.jpg');"></div>
+                <h2>Hostel 1</h2>
+                <form action="./RegistrationServlet" method="post">
+                    <input type="hidden" name="selectedHostel" value="Hostel 1">
+                    <div class="form-group">
+                        <label for="hostel1Field">Hostel 1 Specific Field:</label>
+                        <input type="text" id="hostel1Field" name="hostel1Field" class="form-control" required>
+                    </div>
+                    <input type="submit" value="Register" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="hostel-container">
+                <div class="hostel-background" style="background-image: url('Hostel2.jpg');"></div>
+                <h2>Hostel 2</h2>
+                <form action="./RegistrationServlet" method="post">
+                    <input type="hidden" name="selectedHostel" value="Hostel 2">
+                    <div class="form-group">
+                        <label for="hostel2Field">Hostel 2 Specific Field:</label>
+                        <input type="text" id="hostel2Field" name="hostel2Field" class="form-control" required>
+                    </div>
+                    <input type="submit" value="Register" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="hostel-container">
+                <div class="hostel-background" style="background-image: url('Hostel3.jpg');"></div>
+                <h2>Hostel 3</h2>
+                <form action="./RegistrationServlet" method="post">
+                    <input type="hidden" name="selectedHostel" value="Hostel 3">
+                    <div class="form-group">
+                        <label for="hostel3Field">Hostel 3 Specific Field:</label>
+                        <input type="text" id="hostel3Field" name="hostel3Field" class="form-control" required>
+                    </div>
+                    <input type="submit" value="Register" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

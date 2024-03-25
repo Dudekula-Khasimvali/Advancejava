@@ -1,0 +1,44 @@
+package java8Features;
+import java.util.*;
+@FunctionalInterface
+interface Shape{
+	void draw();
+}
+/*interface First {
+	void m1(); //abstract method
+	/*static void m2() //static method
+	{
+		System.out.println("static method of FunctionalInterface");
+	}
+	//default method
+	default void m3() {
+		System.out.println("defaut method of FunctionalInterface");
+	}
+	
+	class secound implements First{
+		public void m1() {
+			System.out.println("adstract method of FunctionalInterface");
+		}
+	}
+}*/
+public class FunctionalInterfaceDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			/*First f=new secound();
+			
+			f.m1();
+			f.m3();
+			First.m2();*/
+		
+		Shape rect=()->System.out.println("draw method in rectangele");
+		rect.draw();
+		Shape tria=()->System.out.println("draw method in triangle");
+		tria.draw();
+		Shape cric=()->System.out.println("draw method in Circle");
+		cric.draw();
+		
+	}
+		
+
+}

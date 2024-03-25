@@ -1,0 +1,29 @@
+package java8Features;
+interface Shape{
+	void draw();
+}
+public class LambdaExpressionDemo {
+
+	public static void main(String[] args) {
+		Shape rect=()->System.out.println("Draw method of rectangle");
+		rect.draw();
+		Shape tri=()->System.out.println("Draw method of triangle");
+		tri.draw();
+		Shape cric=()->System.out.println("Draw method of Circle");
+		cric.draw();
+		
+		display(()->System.out.println("draw method in rectangele"));
+		display(()->System.out.println("draw method in rectangele"));
+		display(()->System.out.println("draw method in rectangele"));
+		
+		
+		display (rect);
+		display(tri);
+		display(cric);
+}
+
+	private static void display(Shape tri) {
+		tri.draw();
+	}
+
+}

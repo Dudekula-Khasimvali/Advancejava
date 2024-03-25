@@ -1,0 +1,26 @@
+package java8Features;
+@FunctionalInterface
+interface Reverse{
+	void reverse();
+}
+public class LambdaAss1 {
+
+	public static void main(String[] args) {
+		Reverse rev=()->{
+			
+			int n=143;
+			int rem=0;
+			int rev1=0;
+			while(n>0) {
+				rem=n%10;
+				rev1=rev1*10+rem;
+				n=n/10;
+				System.out.println(rev1);
+			}
+			
+		};
+		rev.reverse();
+
+	}
+
+}

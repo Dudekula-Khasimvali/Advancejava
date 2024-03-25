@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Number List App</title>
+</head>
+<body bgcolor="yellow">
+<h1>Number List App</h1>
+<form method="get" action="NumberlistServlet">
+<label>Start Number</label>
+<input type="number" name="snum1" placeholdr="Enter the Start Number" requied/>
+<br><br>
+<label>End Number</label>
+<input type="number" name="enum2" placeholdr="Enter the End Number" requied/>
+<br><br>
+<input type="submit" value="EVEN" name="operation">
+<input type="submit" value="ODD" name="operation">
+<input type="submit" value="PRIME" name="operation">
+<input type="submit" value="PERFECT" name="operation">
+<input type="submit" value="STRONG" name="operation">
+</form>
+</body>
+</html>

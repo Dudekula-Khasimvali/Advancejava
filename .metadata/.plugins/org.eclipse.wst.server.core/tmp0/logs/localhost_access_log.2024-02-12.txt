@@ -1,0 +1,17 @@
+127.0.0.1 - - [12/Feb/2024:17:54:35 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [12/Feb/2024:17:54:37 +0530] "GET /RegistrationApp/ HTTP/1.1" 404 771
+0:0:0:0:0:0:0:1 - - [12/Feb/2024:17:54:37 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [12/Feb/2024:17:54:52 +0530] "GET /RegistrationApp/register.html HTTP/1.1" 200 1728
+0:0:0:0:0:0:0:1 - - [12/Feb/2024:17:56:46 +0530] "GET /RegistrationApp/RegisterServlet?Username=khasim&Mobile=6304110024&Email=kv61460%40gmail.com&dob=2003-08-16&gender=on&qualification=BSC&qualification=B.TECH&languages=Telugu&country=UK&comments=hello+world HTTP/1.1" 200 279
+0:0:0:0:0:0:0:1 - - [12/Feb/2024:17:58:21 +0530] "GET /RegistrationApp/RegisterServlet?Username=khasim&Mobile=6304110024&Email=kv61460%40gmail.com&dob=2003-08-16&gender=on&qualification=BSC&qualification=B.TECH&languages=Telugu&country=UK&comments=hello+world HTTP/1.1" 200 369
+0:0:0:0:0:0:0:1 - - [12/Feb/2024:17:59:06 +0530] "GET /RegistrationApp/RegisterServlet?Username=khasim&Mobile=6304110024&Email=kv61460%40gmail.com&dob=2003-08-16&gender=on&qualification=BSC&qualification=B.TECH&languages=Telugu&country=UK&comments=hello+world HTTP/1.1" 200 368
+0:0:0:0:0:0:0:1 - - [12/Feb/2024:18:00:45 +0530] "GET /RegistrationApp/RegisterServlet?Username=khasim&Mobile=6304110024&Email=kv61460%40gmail.com&dob=2003-08-16&gender=on&qualification=BSC&qualification=B.TECH&languages=Telugu&country=UK&comments=hello+world HTTP/1.1" 200 368
+0:0:0:0:0:0:0:1 - - [12/Feb/2024:18:00:46 +0530] "GET /RegistrationApp/RegisterServlet?Username=khasim&Mobile=6304110024&Email=kv61460%40gmail.com&dob=2003-08-16&gender=on&qualification=BSC&qualification=B.TECH&languages=Telugu&country=UK&comments=hello+world HTTP/1.1" 200 368
+0:0:0:0:0:0:0:1 - - [12/Feb/2024:18:00:46 +0530] "GET /RegistrationApp/RegisterServlet?Username=khasim&Mobile=6304110024&Email=kv61460%40gmail.com&dob=2003-08-16&gender=on&qualification=BSC&qualification=B.TECH&languages=Telugu&country=UK&comments=hello+world HTTP/1.1" 200 385
+0:0:0:0:0:0:0:1 - - [12/Feb/2024:18:01:29 +0530] "GET /RegistrationApp/RegisterServlet?Username=khasim&Mobile=6304110024&Email=kv61460%40gmail.com&dob=2003-08-16&gender=on&qualification=BSC&qualification=B.TECH&languages=Telugu&country=UK&comments=hello+world HTTP/1.1" 200 368
+0:0:0:0:0:0:0:1 - - [12/Feb/2024:18:02:18 +0530] "GET /RegistrationApp/RegisterServlet?Username=khasim&Mobile=6304110024&Email=kv61460%40gmail.com&dob=2003-08-16&gender=on&qualification=BSC&qualification=B.TECH&languages=Telugu&country=UK&comments=hello+world HTTP/1.1" 200 368
+0:0:0:0:0:0:0:1 - - [12/Feb/2024:18:02:20 +0530] "GET /RegistrationApp/RegisterServlet?Username=khasim&Mobile=6304110024&Email=kv61460%40gmail.com&dob=2003-08-16&gender=on&qualification=BSC&qualification=B.TECH&languages=Telugu&country=UK&comments=hello+world HTTP/1.1" 200 368
+0:0:0:0:0:0:0:1 - - [12/Feb/2024:18:02:20 +0530] "GET /RegistrationApp/RegisterServlet?Username=khasim&Mobile=6304110024&Email=kv61460%40gmail.com&dob=2003-08-16&gender=on&qualification=BSC&qualification=B.TECH&languages=Telugu&country=UK&comments=hello+world HTTP/1.1" 200 368
+0:0:0:0:0:0:0:1 - - [12/Feb/2024:18:02:23 +0530] "GET /RegistrationApp/RegisterServlet?Username=khasim&Mobile=6304110024&Email=kv61460%40gmail.com&dob=2003-08-16&gender=on&qualification=BSC&qualification=B.TECH&languages=Telugu&country=UK&comments=hello+world HTTP/1.1" 200 368
+127.0.0.1 - - [12/Feb/2024:21:41:01 +0530] "GET / HTTP/1.1" 404 751
+127.0.0.1 - - [12/Feb/2024:21:42:01 +0530] "GET / HTTP/1.1" 404 751

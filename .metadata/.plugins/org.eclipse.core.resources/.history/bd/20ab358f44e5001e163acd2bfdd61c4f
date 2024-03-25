@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <style>
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            background-color: #ffffff;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center mb-4">Forgot Password</h2>
+        <form id="forgot-password-form" onsubmit="return sendOTP()">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send OTP</button>
+        </form>
+    </div>
+
+    <script>
+        function sendOTP() {
+            var email = document.getElementById('email').value;
+            var OTP = generateOTP();
+            // Simulate sending OTP via email (replace this with actual email sending logic)
+            console.log("OTP sent to " + email + ": " + OTP);
+            // Redirect to OTP verification page or display OTP input field
+            return false; // Prevent form submission
+        }
+
+        function generateOTP() {
+            var numbers = '0123456789';
+            var OTP = '';
+            for (var i = 0; i < 6; i++) {
+                OTP += numbers[Math.floor(Math.random() * 10)];
+            }
+            return OTP;
+        }
+    </script>
+</body>
+</html>

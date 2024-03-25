@@ -1,0 +1,24 @@
+package methodReferences;
+interface Shapes{
+	Shapes getShapes(int x);
+}
+class Shap1{
+	int x;
+	public Shape1(int x) //Parameteraised Constructor
+	{
+		super();
+		this.x=x;
+	}
+	void area() {
+		System.out.println("area:"+x*x);
+		
+	}
+}
+public class MethodReferenceDemo1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

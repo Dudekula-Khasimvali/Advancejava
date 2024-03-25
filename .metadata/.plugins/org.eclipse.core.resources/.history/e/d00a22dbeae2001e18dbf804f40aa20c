@@ -1,0 +1,108 @@
+package com.khasim.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class NumberlistServlet
+ */
+@WebServlet("/NumberlistServlet")
+public class NumberlistServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    public NumberlistServlet() {
+        super();
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        int snum1 = Integer.parseInt(request.getParameter("snum1"));
+        int enum2 = Integer.parseInt(request.getParameter("enum2"));
+        String operation = request.getParameter("operation");
+
+        ArrayList<Integer> a = new ArrayList<>();
+        
+        	int result = 0;
+        switch (operation) {
+            case "even":
+                for (int i = snum1; i <= enum2; i++) {
+                    if (i % 2 == 0) {
+                        result=result+i;
+                    }
+                }
+                break;
+            case "odd":
+                for (int i = snum1; i <= enum2; i++) {
+                    if (i % 2 != 0) {
+                        result=result+i;
+                    }
+                }
+                break;
+            case "prime":
+                for (int i = snum1; i <= enum2; i++) {
+                    boolean flag = false;
+                    for (int j = 2; j <= i / 2; j++) {
+                        if (i % j == 0) {
+                            flag = true;
+                            break;
+                        }
+                    }
+                    if (!flag && i > 1) {
+                    	 result=result+i;
+                    }
+                }
+                break;
+            case "Perfect":
+                for (int i = snum1; i <= enum2; i++) {
+                    int sum = 0;
+                    for (int j = 1; j < i; j++) {
+                        if (i % j == 0) {
+                            sum += j;
+                        }
+                    }
+                    if (sum == i) {
+                    	 result=result+i;
+                    }
+                }
+                break;
+            case "Strong":
+                for (int i = snum1; i <= enum2; i++) {
+                    int temp = i;
+                    int rem, result1 = 0;
+                    while (temp != 0) {
+                        int fact = 1;
+                        rem = temp % 10;
+                        for (int k = 1; k <= rem; k++) {
+                            fact *= k;
+                        }
+                        result1 += fact;
+                        temp /= 10;
+                    }
+                    if (result1 == i) {
+                    	 result=result+i;
+                    }
+                }
+                break;
+        }
+
+        response.setContentType("text/html");
+        PrintWriter writer = response.getWriter();
+        writer.println("<html>");
+        writer.println("<body bgcolor=pink>");
+        writer.println("<h2>Generate Numbers Result</h2>");
+        writer.println("The " + operation +"<br><br>");
+        writer.println("The first num" + snum1 +"<br><br>");
+        writer.println("The second num" + enum2 +"<br><br>");
+        writer.println("The result nums" + result +"<br><br>");
+        
+        writer.println("</body>");
+        writer.println("</html>");
+    }
+}

@@ -1,0 +1,35 @@
+package com.khasim.project;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet("/FirstServlet")
+public class FirstServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		//read the data
+		String email = request.getParameter("email");
+        String phone = request.getParameter("phone");
+        String aadhar = request.getParameter("aadhar");
+        
+        // For example, you can pass them to the UserDAO to register the user
+        int result = HostelDao.registerUser(email, phone, aadhar);
+
+        if (result > 0) {
+            // Registration successful, redirect to a success page
+           RequestDispatcher dispatcher = request.getRequestDispatcher("register.html");
+        } else {
+            // Registration failed, redirect to an error page
+            response.sendRedirect("First.html");
+        }
+    }
+	}

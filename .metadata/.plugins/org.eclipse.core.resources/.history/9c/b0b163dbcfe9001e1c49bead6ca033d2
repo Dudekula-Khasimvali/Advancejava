@@ -1,0 +1,276 @@
+<!--  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden; /* Added to prevent horizontal scrollbar */
+        }
+
+        .background-image {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Added transparency for better visibility */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .form-group input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="background-image" style="background-image: url('Hostel.jpg');">
+    <div class="container">
+        <h2>Hostel 1 Registration</h2>
+        <form action="./RegistrationServlet" method="post">
+            <div class="form-group">
+                <label for="hostel1Name">Name:</label>
+                <input type="text" id="hostel1Name" name="hostel1Name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="hostel1Email">Email:</label>
+                <input type="email" id="hostel1Email" name="hostel1Email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="hostel1Phone">Phone Number:</label>
+                <input type="tel" id="hostel1Phone" name="hostel1Phone" pattern="[0-9]{10}" class="form-control" required>
+            </div>
+            <input type="submit" value="Register for Hostel 1" class="btn btn-primary">
+        </form>
+    </div>
+</div>
+
+<div class="background-image" style="background-image: url('Hostel2.jpg');">
+    <div class="container">
+        <h2>Hostel 2 Registration</h2>
+        <form action="./RegistrationServlet" method="post">
+            <div class="form-group">
+                <label for="hostel2Name">Name:</label>
+                <input type="text" id="hostel2Name" name="hostel2Name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="hostel2Email">Email:</label>
+                <input type="email" id="hostel2Email" name="hostel2Email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="hostel2Phone">Phone Number:</label>
+                <input type="tel" id="hostel2Phone" name="hostel2Phone" pattern="[0-9]{10}" class="form-control" required>
+            </div>
+            <input type="submit" value="Register for Hostel 2" class="btn btn-primary">
+        </form>
+    </div>
+</div>
+
+<div class="background-image" style="background-image: url('Hostel3.jpg');">
+    <div class="container">
+        <h2>Hostel 3 Registration</h2>
+        <form action="./RegistrationServlet" method="post">
+            <div class="form-group">
+                <label for="hostel3Name">Name:</label>
+                <input type="text" id="hostel3Name" name="hostel3Name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="hostel3Email">Email:</label>
+                <input type="email" id="hostel3Email" name="hostel3Email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="hostel3Phone">Phone Number:</label>
+                <input type="tel" id="hostel3Phone" name="hostel3Phone" pattern="[0-9]{10}" class="form-control" required>
+            </div>
+            <input type="submit" value="Register for Hostel 3" class="btn btn-primary">
+        </form>
+    </div>
+</div>
+
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden; /* Added to prevent horizontal scrollbar */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .hostel {
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .hostel .hostel-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            border-radius: 5px;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .form-group input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="hostel">
+                <div class="hostel-image" style="background-image: url('Hostel.jpg');"></div>
+                <h2>LUXERY Hostel </h2>
+                <form action="./RegistrationServlet" method="post">
+                    <div class="form-group">
+                        <label for="hostel1Name">Name:</label>
+                        <input type="text" id="hostel1Name" name="hostel1Name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hostel1Email">Email:</label>
+                        <input type="email" id="hostel1Email" name="hostel1Email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hostel1Phone">Phone Number:</label>
+                        <input type="tel" id="hostel1Phone" name="hostel1Phone" pattern="[0-9]{10}" class="form-control" required>
+                    </div>
+                    <input type="submit" value="Register for Hostel 1" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="hostel">
+                <div class="hostel-image" style="background-image: url('hostel2.jpg');"></div>
+                <h2>DELUX Hostel </h2>
+                <form action="./RegistrationServlet" method="post">
+                    <div class="form-group">
+                        <label for="hostel2Name">Name:</label>
+                        <input type="text" id="hostel2Name" name="hostel2Name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hostel2Email">Email:</label>
+                        <input type="email" id="hostel2Email" name="hostel2Email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hostel2Phone">Phone Number:</label>
+                        <input type="tel" id="hostel2Phone" name="hostel2Phone" pattern="[0-9]{10}" class="form-control" required>
+                    </div>
+                    <input type="submit" value="Register for Hostel 2" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="hostel">
+                <div class="hostel-image" style="background-image: url('hostel3.jpg');"></div>
+                <h2>NORMAL Hostel </h2>
+                <form action="./RegistrationServlet" method="post">
+                    <div class="form-group">
+                        <label for="hostel3Name">Name:</label>
+                        <input type="text" id="hostel3Name" name="hostel3Name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hostel3Email">Email:</label>
+                        <input type="email" id="hostel3Email" name="hostel3Email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hostel3Phone">Phone Number:</label>
+                        <input type="tel" id="hostel3Phone" name="hostel3Phone" pattern="[0-9]{10}" class="form-control" required>
+                    </div>
+                    <input type="submit" value="Register for Hostel 3" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

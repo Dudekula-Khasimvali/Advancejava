@@ -1,0 +1,16 @@
+package LinkedList;
+import java.util.*;
+public class Demo1 {
+
+	public static void main(String[] args) {
+		LinkedList<Integer> ll=new LinkedList<Integer>();
+		//addding
+		ll.add(10);
+		ll.add(20);
+		ll.add(30);
+		System.out.println(ll);
+		
+		//adding element to perticular Index
+		ll.add(1,15);
+	}
+}

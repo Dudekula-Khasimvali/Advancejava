@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Registration App..</title>
+</head>
+<body bgcolor="yellow">
+<h1>Registration Form..</h1>
+<form method="get" action="RegisterServlet">
+<label>UserName:</label>
+<input type ="text" name="UserName" placeholder="Enter the username" required/>
+<br><br>
+<label>password :</label>
+<input type ="password" name="password" placeholder="Enter the password" required/>
+<br><br>
+<label>Mobile:</label>
+<input type ="number" name="mobile" placeholder="Enter the Mobile" required/>
+<br><br>
+<label>Email:</label>
+<input type ="email" name="email" placeholder="Enter the email" required/>
+<br><br>
+<label>Gender:/label>
+<input type="radio" name="gender" value="Male"/>Male
+<input type="radio" name="gender" value="Female"/>Female
+<br><br>
+<label>Qualification</label>
+<input type="checkbox" name="qualification"/>BSC
+<input type="checkbox" name="qualification"/>B.TECH
+<input type="checkbox" name="qualification"/>MCA
+<input type="checkbox" name="qualification"/>M.TECH
+<br><br>
+<label>Country</label>
+<select name="Country">
+<option> INDIA</option>
+<option> UK</option>
+<option> RUSSIA</option>
+<option> ENGLAND</option>
+<br><br>
+
+</form>
+</body>
+</html>
